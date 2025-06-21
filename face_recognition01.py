@@ -4,11 +4,11 @@ import numpy as np
 import os
 
 # Load known image
-known_image = face_recognition.load_image_file("siddarth.jpg")
+known_image = face_recognition.load_image_file("your_name.jpg")
 known_encodings = face_recognition.face_encodings(known_image)
 
 if not known_encodings:
-    print("❌ No face found in siddarth.jpg. Use a clear photo.")
+    print("❌ No face found in your_name.jpg. Use a clear photo.")
     exit()
 
 known_encoding = known_encodings[0]
@@ -48,14 +48,14 @@ while True:
             name = "Unknown"
 
             if match:
-                name = "HI MR SIDDARTH SREENIVAS"
+                name = "HI MR your_name"
                 if not greeted:
                     print("✅ Match found!")
-                    os.system("say 'Hi Mister Siddarth Sreenivas'")
+                    os.system("say 'Hi Mister your_name'")
                     greeted = True
                     warned_unknown = False  # reset warning
             else:
-                print("❌ Face does not match Siddarth.")
+                print("❌ Face does not match your_name.")
                 if not warned_unknown:
                     os.system("say 'Sorry, I do not know you'")
                     warned_unknown = True
